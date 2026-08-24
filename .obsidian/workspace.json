@@ -1,0 +1,234 @@
+{
+  "main": {
+    "id": "ed26a1a1d366061c",
+    "type": "split",
+    "children": [
+      {
+        "id": "912dd123b3eb3e96",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d00c21637a2dd2ab",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "AWS/Add-Volume.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Add-Volume"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "eaf57c720bacdd8a",
+    "type": "split",
+    "children": [
+      {
+        "id": "62582aa1328015e6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "671cd5b9dc16ce3a",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "c514cfee3856758e",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "84e056eb01696e47",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "0ce12604fe50f8b1",
+    "type": "split",
+    "children": [
+      {
+        "id": "6ada3e71032e3c08",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b8c8e7a0f72bd497",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "AGENTS.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "c5460a1e772a1f29",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "AGENTS.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "e2561b18d7790805",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "690dca6c083419c4",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "606aaf2c3edfbdbd",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "AGENTS.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "671cd5b9dc16ce3a",
+  "lastOpenFiles": [
+    "LLMS/Subagents-Format/llm-wiki-router-usage.md",
+    "GIT/git-commands-and-commit-signing.md",
+    "PGP/simple-gpg-command-note.md",
+    "PGP/using-openpgpauth-to-ssh.md",
+    "AGENTS.md",
+    "Base-inline-code.md",
+    "obsidian-vault-required-settings-checklist.md",
+    "Welcome.md",
+    "VIM/vim-references/VIM-command-note.md",
+    "VIM/vim-references/VIM-Plugin.md",
+    "VIM/vim-references/Cheetsheet.md",
+    "VIM/vim-references",
+    "VIM/VIM-KEY.md",
+    "VIM/Cheetsheet.md",
+    "VIM",
+    "useful-html-tags-for-markdown.md",
+    "TMUX/init-and-basic-setup.md",
+    "TMUX",
+    "Terraform/AWS/using-variable.md",
+    "Terraform/AWS/resource-reference2.md",
+    "Terraform/AWS/resource-reference.md",
+    "Terraform/AWS/import-resources-references.md",
+    "Terraform/AWS/data-structure-or-for_each.md",
+    "Terraform/AWS/data-sourcing-reference.md",
+    "Terraform/AWS/basic-compile.md",
+    "Terraform/AWS/basic-blocks.md",
+    "Terraform/AWS",
+    "Terraform",
+    "SQL/postgresql-access.md",
+    "SQL/basic-query.md",
+    "SQL",
+    "shahash-commands-by-os.md",
+    "PGP",
+    "LLMS/images/moe_explain.png",
+    "LLMS/images/llm-oneshot.png",
+    "LLMS/Subagents-Format",
+    "LLMS/images",
+    "LLMS",
+    "Bitcoin/bip39/images/mnemonic-to-seed.png",
+    "Bitcoin/bip39/images/entropy-encoding-mnemonic-words.png"
+  ]
+}
