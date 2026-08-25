@@ -1,90 +1,144 @@
 # Using an OpenPGP Authentication Subkey for SSH
 
-OpenPGP authentication subkeys (`[A]`) can be used for SSH authentication through `gpg-agent`.
-
-## 1. Enable SSH support in `gpg-agent`
-
-Add this to:
+OpenPGP authentication subkeys (`[A]`) can authenticate SSH connections through `gpg-agent`. This also allows Git to push to GitHub over SSH without exporting the OpenPGP private key as an OpenSSH private key.
 
 ```text
-~/.gnupg/gpg-agent.conf
+Git / OpenSSH → gpg-agent → OpenPGP [A] subkey → GitHub
 ```
+
+> [!important]
+> SSH authentication uses the public key registered to the GitHub account. The Git commit email and GPG commit-signing email do not need to match the SSH key.
+
+## Initial Setup
+
+### 1. Enable SSH support in `gpg-agent`
+
+Add the following setting to `~/.gnupg/gpg-agent.conf`:
 
 ```text
 enable-ssh-support
 ```
 
-## 2. Find the authentication subkey keygrip
+### 2. Find the authentication subkey keygrip
 
 ```bash
 gpg -K --with-keygrip
 ```
 
-Find the `Keygrip` belonging to the `[A]` subkey.
+Find the `Keygrip` belonging to the authentication subkey marked `[A]`.
 
-## 3. Allow the subkey for SSH
+### 3. Allow the subkey for SSH
 
-Add its keygrip to:
-
-```text
-~/.gnupg/sshcontrol
-```
-
-Example:
+Add the `[A]` subkey's keygrip to `~/.gnupg/sshcontrol`:
 
 ```text
 ABCDEF1234567890ABCDEF1234567890ABCDEF12
 ```
 
-## 4. Restart `gpg-agent`
+### 4. Start `gpg-agent` and connect the current shell
 
 ```bash
-gpgconf --kill gpg-agent
 gpgconf --launch gpg-agent
+export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
 ```
 
-## 5. Point SSH to `gpg-agent`
+To apply the socket automatically in new Zsh sessions, add this line to `~/.zshrc`:
 
 ```bash
 export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
 ```
 
-## 6. Verify the key
+## Register the Key with GitHub
 
-```bash
-ssh-add -L
-```
-
-The OpenPGP authentication subkey should now appear as an SSH public key.
-
-You can also export the same public key with:
+Export the authentication subkey as an SSH public key:
 
 ```bash
 gpg --export-ssh-key <KEY_ID>
 ```
 
-## 7. Add it to GitHub
-
-Copy the exported `ssh-ed25519 ...` public key and add it under:
+Copy the resulting `ssh-ed25519 ...` public key and register it under:
 
 **GitHub → Settings → SSH and GPG keys → New SSH key**
 
-Then test:
+Register it as an **SSH key**, not only as a GPG key.
+
+## Verify SSH Authentication
+
+Confirm that `gpg-agent` exposes the public key:
+
+```bash
+ssh-add -L
+```
+
+Then test GitHub authentication:
 
 ```bash
 ssh -T git@github.com
 ```
 
-The authentication flow is:
+For detailed authentication logs:
 
-```text
-OpenSSH
-   ↓
-gpg-agent
-   ↓
-OpenPGP [A] subkey
-   ↓
-GitHub
+```bash
+ssh -vT git@github.com
 ```
 
-The private key remains inside the GnuPG key store and is not exported as an OpenSSH private key.
+## Push to GitHub over SSH
+
+Check whether the repository remote uses SSH:
+
+```bash
+git remote -v
+```
+
+The remote should have this form:
+
+```text
+git@github.com:USERNAME/REPOSITORY.git
+```
+
+If it uses `https://github.com/...`, change it to SSH:
+
+```bash
+git remote set-url origin git@github.com:USERNAME/REPOSITORY.git
+```
+
+Push the current branch:
+
+```bash
+git branch --show-current
+git push origin <BRANCH_NAME>
+```
+
+For example:
+
+```bash
+git push origin master
+```
+
+An HTTPS remote may ask for a username or token. The OpenPGP authentication subkey is used only when the remote uses SSH.
+
+## Troubleshoot `Permission denied (publickey)`
+
+If `ssh-add -L` shows the key but `git push` still fails, reset `gpg-agent` and reconnect the current shell to its new SSH socket:
+
+```bash
+gpgconf --kill gpg-agent
+gpgconf --launch gpg-agent
+export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+ssh-add -L
+ssh -T git@github.com
+```
+
+This can recover from a stale `gpg-agent`, an outdated agent socket, or an OpenPGP card/key state that is visible as a public key but cannot complete an authentication signature.
+
+> [!note] Public-key listing versus actual authentication
+> `ssh-add -L` only confirms that an agent exposes a public key. `ssh -T` or `git push` additionally requires the agent or OpenPGP card to perform a real signature with the private key.
+
+Also verify:
+
+- The exported SSH public key is registered in the GitHub account's **SSH keys**.
+- That GitHub account has access to the repository.
+- `git remote -v` points to the intended repository using an SSH URL.
+- If the subkey is stored on an OpenPGP card, the card is connected and detected with `gpg --card-status`; see [[move-gpg-subkey-to-card]].
+
+The private key remains in the GnuPG key store or on the OpenPGP card throughout this process.
