@@ -1,7 +1,7 @@
 ---
 title: AWS MCP Server Setup in Codex
 date: 2026-08-24
-updated: 2026-08-24
+updated: 2026-08-25
 tags:
   - aws
   - mcp
@@ -76,7 +76,17 @@ Replace the example identity names with the intended least-privilege agent ident
 > [!important] OAuth permission is separate from workload permission
 > `AWSMCPSignInOAuthAccessPolicy` permits the OAuth connection and token flow; it does not grant permission to list, create, modify, or delete AWS resources. The user or role still needs the relevant service permissions, such as `ec2:DescribeInstances`, and remains subject to permission boundaries, SCPs, resource policies, and explicit denies. AWS account root does not require this additional policy, but root credentials should not be used for routine MCP access.
 
-Add the following server entry:
+### Register the server with the Codex CLI
+
+Register the AWS MCP Server directly from the command line:
+
+```sh
+codex mcp add aws_mcp --url https://aws-mcp.us-east-1.api.aws/mcp
+```
+
+This creates the `aws_mcp` server entry in the Codex MCP configuration. To use the Frankfurt endpoint instead, replace the URL with `https://aws-mcp.eu-central-1.api.aws/mcp`.
+
+Alternatively, add the following server entry manually to the Codex configuration:
 
 ```toml
 [mcp_servers.aws_mcp]
