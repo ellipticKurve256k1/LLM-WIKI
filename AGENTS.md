@@ -95,6 +95,7 @@ Entry notes:
 - [[LLMS/ai-embedding-model]]
 - [[LLMS/Benchmarks]]
 - [[LLMS/Subagents-Format/agents-guide]]
+- [[LLMS/mcp-tool-search-context]] (MCP tool definitions & context window / Tool Search)
 
 For agent templates, continue to:
 - [[LLMS/Subagents-Format/codex]]
