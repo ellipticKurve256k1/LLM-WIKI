@@ -114,6 +114,9 @@ Claude Code 내장 명령 **`/context`**는 현재 세션의 토큰 사용량을
 
 ## 관련 노트
 
+- [[LLMS/zcode-codex-harness-context-analysis|하네스 컨텍스트 분석 — ZCode vs Codex CLI]] — ZCode와 Codex CLI의 MCP 로딩 방식·컨텍스트 비용 실측 비교
+- [[LLMS/zcode-mcp-lazy-proxy-setup|ZCode용 mcp-lazy 설정 가이드]] — eager MCP 스키마 비용을 줄이는 프록시 구성 절차
+- [[LLMS/mcp-remote-transport|MCP 원격 전송 (Transport)]] — HTTP+SSE → Streamable HTTP로의 전송 계층 진화
 - [[LLMS/Subagents-Format/agents-guide|.agents, Skills, and MCP]] — MCP 서버 설정·관리(`codex mcp add`, `config.toml`) 참조
 - [[LLMS/local-llm-engine|Local LLM engine]] — 로컬 LLM/컨텍스트 관련 참조
 - [[LLMS/codex-openrouter-alias|Codex CLI OpenRouter alias]] — agent 툴 구성 참조

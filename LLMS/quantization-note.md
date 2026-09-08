@@ -173,3 +173,7 @@ Simulate quantization effects during training. More accurate but computationally
 ## Summary
 
 Quantization transforms high-precision model weights into compact low-precision representations. Weight quantization reduces storage and memory; activation quantization speeds up computation. The key trade-off is between efficiency gains and potential accuracy loss. For most practical applications, INT8 quantization offers a good balance—typically achieving 2-4x compression with minimal quality degradation. Combined weight + activation quantization provides the best efficiency but requires careful implementation.
+
+## Related Notes
+
+- [[LLMS/llm-precision-quantization|LLM Precision & Quantization]] — BF16/FP8/INT precision formats, mixed-precision deployment, provider comparison

@@ -83,7 +83,7 @@ Entry notes:
 ### LLMs, Agents, Skills, and MCP
 
 Use for:
-- Local LLM engines, GGUF, quantization, embeddings, benchmarks, Codex skills, MCP configuration, and subagent formats
+- Local LLM engines, UI tooling (Open WebUI), GGUF, quantization, precision formats (BF16/FP8/INT8), mixed-precision deployment, embeddings, benchmarks, token economics, Codex skills, MCP configuration, and subagent formats
 
 Primary locations:
 - `LLMS/`
@@ -91,11 +91,19 @@ Primary locations:
 
 Entry notes:
 - [[LLMS/local-llm-engine]]
+- [[LLMS/llm-local-tool]] (Open WebUI setup & variants)
 - [[LLMS/quantization-note]]
+- [[LLMS/llm-precision-quantization]]
 - [[LLMS/ai-embedding-model]]
 - [[LLMS/Benchmarks]]
 - [[LLMS/Subagents-Format/agents-guide]]
 - [[LLMS/mcp-tool-search-context]] (MCP tool definitions & context window / Tool Search)
+- [[LLMS/zcode-codex-harness-context-analysis]] (ZCode vs Codex CLI context and MCP loading measurements)
+- [[LLMS/zcode-mcp-lazy-proxy-setup]] (practical mcp-lazy proxy setup for ZCode — incl. npx→direct-node launch fix, 12s→0.6s)
+- [[LLMS/mcp-remote-transport]] (MCP remote transports — HTTP+SSE → Streamable HTTP)
+- [[LLMS/token-economics]] (token economics & AI pricing — 인지노동의 외주화)
+- [[LLMS/api-base-url-endpoints]] (API Base URL / OpenAI-compatible vs Anthropic endpoints)
+- [[LLMS/zcode-chat-history-storage-and-deletion]] (ZCode 대화 저장 위치 — db.sqlite/rollout jsonl/tasks-index.sqlite — archive의 실체와 고스트 타이틀 포함 완전 삭제)
 
 For agent templates, continue to:
 - [[LLMS/Subagents-Format/codex]]
