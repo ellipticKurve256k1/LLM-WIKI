@@ -223,7 +223,7 @@ npm install --prefix ~/.mcp-lazy/prefix mcp-lazy mcp-remote
 
 ## 4. Maintenance
 
-- **New MCP server**: add an entry to `~/.mcp-lazy/servers.json`, re-run `npx -y mcp-lazy init`, done (cache refreshes automatically on fingerprint too). Note: since Step 7, backend entries launch via `node .../mcp-remote/dist/proxy.js` — copy that pattern instead of `npx -y mcp-remote`.
+- **New MCP server**: add an entry to `~/.mcp-lazy/servers.json`, re-run `npx -y mcp-lazy init`, done (cache refreshes automatically on fingerprint too). **등록/삭제 후에는 인벤토리 노트 [[LLMS/mcp-lazy-server-inventory]]의 서버 표도 함께 갱신한다.** Note: since Step 7, backend entries launch via `node .../mcp-remote/dist/proxy.js` — copy that pattern instead of `npx -y mcp-remote`.
 - **Proxy update (Step 7 이후)**: prefix 설치는 자동 갱신 안 됨 → `export npm_config_cache=~/.mcp-lazy/npm-cache && npm update --prefix ~/.mcp-lazy/prefix`
 - **Doctor**: `npx mcp-lazy doctor` shows registered servers and estimated savings (일회성 관리 명령은 npx로 실행해도 무방 — 세션 기동 경로가 아니므로).
 - **Adding OAuth servers later**: same as Todoist — the first `init` opens the browser once.
@@ -249,6 +249,8 @@ rm -rf ~/.mcp-lazy   # full cleanup (npx-installed, nothing else to uninstall)
 
 ## Related Notes
 
+- [[LLMS/mcp-lazy-server-inventory|mcp-lazy 등록 MCP 서버 현황]] — 현재 등록된 서버·툴 수·OAuth 토큰 상태 인벤토리 (이 노트는 절차, 저 노트는 현황)
 - [[LLMS/zcode-codex-harness-context-analysis|하네스 컨텍스트 분석 — ZCode vs Codex CLI]] — measured context cost and proxy-selection rationale
 - [[LLMS/mcp-tool-search-context|MCP 툴 정의와 컨텍스트 윈도우]] — Tool Search and progressive-discovery concepts
 - [[LLMS/Subagents-Format/agents-guide|.agents, Skills, and MCP]] — general MCP server configuration reference
+- Skill: `~/.agents/skills/mcp-lazy-setup/` — this procedure distilled into a reusable ZCode skill (fresh setup, adding servers, troubleshooting, bundled verification script `scripts/test-proxy.mjs`)

@@ -100,10 +100,13 @@ Entry notes:
 - [[LLMS/mcp-tool-search-context]] (MCP tool definitions & context window / Tool Search)
 - [[LLMS/zcode-codex-harness-context-analysis]] (ZCode vs Codex CLI context and MCP loading measurements)
 - [[LLMS/zcode-mcp-lazy-proxy-setup]] (practical mcp-lazy proxy setup for ZCode — incl. npx→direct-node launch fix, 12s→0.6s)
+- [[LLMS/mcp-lazy-server-inventory]] (registered MCP servers behind mcp-lazy — server/tool counts, OAuth token state, per-agent wiring)
+- [[LLMS/mcp-lazy-web-console]] (local web console for managing mcp-lazy servers — add/delete/URL edit, backups, agent registration; lives at ~/Desktop/Dev_Study/mcp-lazy-web)
 - [[LLMS/mcp-remote-transport]] (MCP remote transports — HTTP+SSE → Streamable HTTP)
 - [[LLMS/token-economics]] (token economics & AI pricing — 인지노동의 외주화)
 - [[LLMS/api-base-url-endpoints]] (API Base URL / OpenAI-compatible vs Anthropic endpoints)
 - [[LLMS/zcode-chat-history-storage-and-deletion]] (ZCode 대화 저장 위치 — db.sqlite/rollout jsonl/tasks-index.sqlite — archive의 실체와 고스트 타이틀 포함 완전 삭제)
+- [[LLMS/zcode-telegram-bot-channel-and-notify]] (ZCode 텔레그램 봇 채널 구조·내장 명령어·/task 붙임 메커니즘과 telegram-notify 스킬 알림 구축 — 훅 시행착오·이중 채널 중복 원인 포함)
 
 For agent templates, continue to:
 - [[LLMS/Subagents-Format/codex]]
@@ -167,6 +170,7 @@ Entry notes:
 - [[Dataview-Note]]
 - [[useful-html-tags-for-markdown]]
 - [[Base-inline-code]]
+- [[기본-obsidian-vault-setup]]
 
 ### Device Setup
 
