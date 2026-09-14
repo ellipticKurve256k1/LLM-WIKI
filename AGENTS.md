@@ -60,6 +60,7 @@ Primary locations:
 Entry notes:
 - [[bash-ssh/bash-commands]]
 - [[bash-ssh/bash-script]]
+- [[bash-ssh/macos-caffeinate-screen-off]] (macOS caffeinate/pmset — screen-off 스킬 명령어)
 - [[bash-ssh/ssh-key-management-commands]]
 - [[bash-ssh/ubuntu-netplan-ip-configuration]]
 - [[TMUX/init-and-basic-setup]]
@@ -105,6 +106,7 @@ Entry notes:
 - [[LLMS/mcp-remote-transport]] (MCP remote transports — HTTP+SSE → Streamable HTTP)
 - [[LLMS/token-economics]] (token economics & AI pricing — 인지노동의 외주화)
 - [[LLMS/api-base-url-endpoints]] (API Base URL / OpenAI-compatible vs Anthropic endpoints)
+- [[LLMS/curl-accept-header-and-llms-txt]] (curl Accept 헤더·Content-Type 확인 — llms.txt 파일명/내용 문법/Content-Type는 별개)
 - [[LLMS/zcode-chat-history-storage-and-deletion]] (ZCode 대화 저장 위치 — db.sqlite/rollout jsonl/tasks-index.sqlite — archive의 실체와 고스트 타이틀 포함 완전 삭제)
 - [[LLMS/zcode-telegram-bot-channel-and-notify]] (ZCode 텔레그램 봇 채널 구조·내장 명령어·/task 붙임 메커니즘과 telegram-notify 스킬 알림 구축 — 훅 시행착오·이중 채널 중복 원인 포함)
 
