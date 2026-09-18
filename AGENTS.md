@@ -109,6 +109,7 @@ Entry notes:
 - [[LLMS/curl-accept-header-and-llms-txt]] (curl Accept 헤더·Content-Type 확인 — llms.txt 파일명/내용 문법/Content-Type는 별개)
 - [[LLMS/zcode-chat-history-storage-and-deletion]] (ZCode 대화 저장 위치 — db.sqlite/rollout jsonl/tasks-index.sqlite — archive의 실체와 고스트 타이틀 포함 완전 삭제)
 - [[LLMS/zcode-telegram-bot-channel-and-notify]] (ZCode 텔레그램 봇 채널 구조·내장 명령어·/task 붙임 메커니즘과 telegram-notify 스킬 알림 구축 — 훅 시행착오·이중 채널 중복 원인 포함)
+- [[LLMS/hermes-telegram-group-configuration]] (Hermes Telegram 그룹 추가, BotFather privacy/bot-to-bot 설정, 그룹 허용 방식과 Gateway 재시작 기준)
 - [[LLMS/himalaya-gmail-imap-smtp-setup]] (macOS Himalaya v2 Gmail IMAP·SMTP 설정, mailbox 명령 전환, 연결 검증 및 비밀값 취급)
 
 For agent templates, continue to:
