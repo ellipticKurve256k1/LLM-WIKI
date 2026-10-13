@@ -190,15 +190,30 @@ if not, then re-install the vim may be necessary.
 - `:e $filename`: open a file 
 - `double ctrl + w`: switch the cursor within the same terminal seprated window 
 
-### `VSCODE` VIM plugin 
+### macOS `Press and Hold` and key repeat
 
-MacOS has its own feature called `Press and Hold` that if you hold one key it will not repeat inputing the key, it rather gets changed to different special character.
+macOS's `Press and Hold` feature can show accent/special-character options instead of repeating a held key. This can prevent continuous movement in Vim mode in editors such as VS Code and Cursor.
 
-Thus, app like VSCode gets overwritten by `Press and Hold` settings. So installing VIM mode in VScode as plugin will not allow `Key Repeat`. So to enable key repeat, following command should be input in terminal.
+Find the target app's bundle ID (replace `Cursor` with the app's exact name if needed):
+
+```bash
+osascript -e 'id of app "Cursor"'
+```
+
+Use the returned bundle ID to disable `Press and Hold` for that app only. For example, capture the ID and write the preference:
+
+```bash
+BUNDLE_ID=$(osascript -e 'id of app "Cursor"')
+defaults write "$BUNDLE_ID" ApplePressAndHoldEnabled -bool false
+```
+
+Alternatively, substitute the ID directly in the `defaults write` command. For VS Code, the bundle ID is commonly `com.microsoft.VSCode`:
 
 ```bash
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 ```
+
+Completely quit and relaunch the app (for example, use `Cmd+Q`; closing its window alone is not enough) for the preference to take effect. This setting is per-app; avoid `defaults write -g` unless you intend to change the behavior globally.
 
 ### VIM Plugin
 
